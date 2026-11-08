@@ -16,4 +16,6 @@ COPY . .
 EXPOSE 10000
 
 # Start Flask application using Gunicorn
-CMD ["sh", "-c", "gunicorn --workers 1 --bind 0.0.0.0:${PORT:-10000} app:app"]
+
+CMD ["sh", "-c", "gunicorn --workers 1 --timeout 120 --graceful-timeout 30 --access-logfile - --error-logfile - --bind 0.0.0.0:${PORT:-10000} app:app"]
+
