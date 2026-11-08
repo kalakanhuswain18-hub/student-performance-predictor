@@ -1,47 +1,66 @@
 # 🎓 Student Performance Predictor
 
-An End-to-End Machine Learning web application that predicts students' academic performance using machine learning techniques.
+A Machine Learning web application that predicts students' Mathematics exam scores based on demographic information, parental education, test preparation, and Reading and Writing scores.
+
+**🌐 Live Demo:** https://student-performance-predictor-wnbe.onrender.com
+
+**📂 GitHub Repository:** https://github.com/kalakanhuswain18-hub/student-performance-predictor
 
 ## 🚀 Project Overview
 
-Student Performance Predictor is a machine learning project designed to analyze student-related data and predict academic performance.
+The Student Performance Predictor uses Machine Learning to estimate a student's Mathematics score based on multiple input features.
 
-The project includes a complete ML pipeline, from data ingestion and preprocessing to model training and prediction through a Flask web application.
+The application provides a user-friendly Flask interface and deploys the trained ML pipeline using Docker and Render.
 
 ## ✨ Features
 
-- Data ingestion and preprocessing
-- Handling missing values
-- Feature transformation
-- Machine Learning model training
-- Model evaluation and selection
-- Model serialization
-- Flask-based prediction web application
-- Logging and exception handling
+- Predict Mathematics exam scores.
+- Interactive student information form.
+- Data preprocessing and feature transformation.
+- Trained Machine Learning model.
+- Modular ML pipeline architecture.
+- Flask web application.
+- Docker containerization.
+- Cloud deployment using Render.
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
+| Category | Technologies |
 |---|---|
-| Python | Programming |
-| Pandas | Data manipulation |
-| NumPy | Numerical operations |
-| Scikit-learn | Machine Learning |
-| CatBoost | Model training |
-| Flask | Web application |
-| HTML & CSS | Frontend |
-| Jupyter Notebook | Data analysis |
-| Git & GitHub | Version control |
+| Programming | Python |
+| Data Analysis | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| Machine Learning | Scikit-learn, CatBoost, XGBoost |
+| Backend | Flask |
+| Model Serialization | Dill |
+| Deployment | Docker, Render |
+| Version Control | Git, GitHub |
 
-## 📂 Project Structure
+## 📊 Input Features
+
+The application accepts:
+
+- Gender
+- Race or Ethnicity
+- Parental Level of Education
+- Lunch Type
+- Test Preparation Course
+- Reading Score
+- Writing Score
+
+**Output:** Predicted Mathematics Score out of 100.
+
+## 🏗️ Project Architecture
 
 ```text
-student-performance-predictor/
+Student-Performance-Predictor/
 │
 ├── artifacts/
-├── catboost_info/
-├── logs/
+│   ├── model.pkl
+│   └── preprocessor.pkl
+│
 ├── notebook/
+│
 ├── src/
 │   ├── components/
 │   │   ├── data_ingestion.py
@@ -57,84 +76,102 @@ student-performance-predictor/
 │   └── utils.py
 │
 ├── templates/
-│   ├── home.html
-│   └── index.html
+│   └── home.html
 │
 ├── app.py
+├── Dockerfile
 ├── requirements.txt
-├── README.md
-└── .gitignore
+├── setup.py
+└── README.md
 ```
 
-## ⚙️ Installation & Setup
+## ⚙️ Installation and Setup
 
-**1. Clone the repository**
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/kalakanhuswain18-hub/student-performance-predictor.git
-```
 
-**2. Navigate to project directory**
-
-```bash
 cd student-performance-predictor
 ```
 
-**3. Create virtual environment**
+### 2. Create virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-**4. Activate virtual environment**
+### 3. Activate environment
 
 Windows:
 
-```bash
+```powershell
 venv\Scripts\activate
 ```
 
-**5. Install dependencies**
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**6. Run the application**
+### 5. Run the application
 
 ```bash
 python app.py
 ```
 
-Open your browser:
+Open:
 
 ```text
 http://127.0.0.1:5000
 ```
 
-## 🔄 Machine Learning Workflow
+## 🐳 Docker Deployment
 
-1. Data Ingestion
-2. Data Preprocessing
-3. Feature Engineering
-4. Model Training
-5. Model Evaluation
-6. Model Selection
-7. Model Saving
-8. Prediction using Flask
+### Build Docker image
 
-## 🎯 Project Goal
+```bash
+docker build -t student-performance-predictor .
+```
 
-To build an end-to-end machine learning application that demonstrates practical knowledge of data preprocessing, model development, evaluation, and deployment.
+### Run Docker container
+
+```bash
+docker run -d -p 10000:10000 --name student-predictor student-performance-predictor
+```
+
+Open:
+
+```text
+http://localhost:10000
+```
+
+## ☁️ Cloud Deployment
+
+The application is deployed on Render using Docker.
+
+**Live Application:** https://student-performance-predictor-wnbe.onrender.com
+
+Note: Render's free instance may spin down after inactivity.
+
+## 🔮 Future Improvements
+
+- Add prediction history.
+- Add interactive data visualizations.
+- Improve model evaluation and performance.
+- Add student performance analytics dashboard.
+- Implement user authentication.
+- Add automated model retraining.
 
 ## 👨‍💻 Author
 
 **Kalakanhu Swain**
 
-Computer Science & Engineering Student
+Computer Science & Engineering Student | Aspiring AI/ML Engineer
 
-GitHub: [@kalakanhuswain18-hub](https://github.com/kalakanhuswain18-hub)
+GitHub: https://github.com/kalakanhuswain18-hub
 
 ---
 
-⭐ If you find this project useful, consider giving it a star!
+⭐ If you find this project useful, consider giving the repository a star!
